@@ -1,0 +1,470 @@
+﻿# Game English translation.
+# Copyright Epic Games, Inc. All Rights Reserved.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Game\n"
+"POT-Creation-Date: 2021-11-25 12:38\n"
+"PO-Revision-Date: 2021-11-25 12:38\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Key:	0055DE354BD271E4069AC0BADF164C2B
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Choose.Choose_C:WidgetTree.TextBlock.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Choose.Choose_C:WidgetTree.TextBlock.Text
+msgctxt ",0055DE354BD271E4069AC0BADF164C2B"
+msgid "否"
+msgstr "No"
+
+#. Key:	076461FB41A6CCC0916EF9BD9ADB1B00
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherWJY.Default__BP_TeacherWJY_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherWJY.Default__BP_TeacherWJY_C:Name.Text
+msgctxt ",076461FB41A6CCC0916EF9BD9ADB1B00"
+msgid "数学老师"
+msgstr "Math Teacher"
+
+#. Key:	0A22AA8442165D0812ADB097E4B6E279
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:GetTime [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:GetTime [Script Bytecode]
+msgctxt ",0A22AA8442165D0812ADB097E4B6E279"
+msgid "当前时间:"
+msgstr "Current Time:"
+
+#. Key:	0D40337743A1FEE4BEC8CEAF00D8C9FF
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherLXJ_Level4.Default__BP_TeacherLXJ_Level4_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherLXJ_Level4.Default__BP_TeacherLXJ_Level4_C:Name.Text
+msgctxt ",0D40337743A1FEE4BEC8CEAF00D8C9FF"
+msgid "Liu Xiaojian"
+msgstr "Liu Xiaojian"
+
+#. Key:	1099287F4939C34343BC8285F1BD449A
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherLXJ.Default__BP_TeacherLXJ_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherLXJ.Default__BP_TeacherLXJ_C:Name.Text
+msgctxt ",1099287F4939C34343BC8285F1BD449A"
+msgid "班主任"
+msgstr "Head Teacher"
+
+#. Key:	1A806369457984A24F301092B92A5AA4
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveShadow [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveShadow [Script Bytecode]
+msgctxt ",1A806369457984A24F301092B92A5AA4"
+msgid "移除双影"
+msgstr ""
+
+#. Key:	22113E224E6D67856A1435AFEBFFA9E7
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.TextBlock_29.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.TextBlock_29.Text
+msgctxt ",22113E224E6D67856A1435AFEBFFA9E7"
+msgid "正在翻书..."
+msgstr "Now reading......"
+
+#. Key:	2215FC7146A792E2477AC5A22C93777A
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Unbeatable [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Unbeatable [Script Bytecode]
+msgctxt ",2215FC7146A792E2477AC5A22C93777A"
+msgid "无敌"
+msgstr ""
+
+#. Key:	2A561BAD4FB6781FEE43029DD7FC62AF
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Choose.Choose_C:WidgetTree.TextBlock_1.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Choose.Choose_C:WidgetTree.TextBlock_1.Text
+msgctxt ",2A561BAD4FB6781FEE43029DD7FC62AF"
+msgid "确定要重新开始？"
+msgstr "Are You Sure?"
+
+#. Key:	2C6CED524924028CB291EEA3F0BBCF97
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_1.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_1.Text
+msgctxt ",2C6CED524924028CB291EEA3F0BBCF97"
+msgid "开始游戏"
+msgstr "New Game"
+
+#. Key:	2F6DC267495470E3D1AE99B6A6505D99
+#. SourceLocation:	/Game/Class9/Blueprints/Objects/BP_Class9TestGameMode.BP_Class9TestGameMode_C:ExecuteUbergraph_BP_Class9TestGameMode [Script Bytecode]
+#: /Game/Class9/Blueprints/Objects/BP_Class9TestGameMode.BP_Class9TestGameMode_C:ExecuteUbergraph_BP_Class9TestGameMode [Script Bytecode]
+msgctxt ",2F6DC267495470E3D1AE99B6A6505D99"
+msgid "游戏失败!"
+msgstr "YOU FAILED!"
+
+#. Key:	326755994A408339132F76A3338081F9
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveBlur [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveBlur [Script Bytecode]
+msgctxt ",326755994A408339132F76A3338081F9"
+msgid "取消移除模糊"
+msgstr ""
+
+#. Key:	3DDEC5CC483E89D320689880534AD384
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Unbeatable [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Unbeatable [Script Bytecode]
+msgctxt ",3DDEC5CC483E89D320689880534AD384"
+msgid "取消无敌"
+msgstr ""
+
+#. Key:	43FB264D45FA3C37C9E055861D284048
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_6.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_6.Text
+msgctxt ",43FB264D45FA3C37C9E055861D284048"
+msgid "确定要重新开始？"
+msgstr "Are You Sure?"
+
+#. Key:	463040B64741F75801A495AFF3CCAB8D
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_7.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_7.Text
+msgctxt ",463040B64741F75801A495AFF3CCAB8D"
+msgid "负担清零"
+msgstr ""
+
+#. Key:	5333522947807C6656E3A193F895B75D
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_8.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_8.Text
+msgctxt ",5333522947807C6656E3A193F895B75D"
+msgid "跳关"
+msgstr ""
+
+#. Key:	57EB5B8C48027921B19ED28C72D2255F
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:GetLPretending [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:GetLPretending [Script Bytecode]
+msgctxt ",57EB5B8C48027921B19ED28C72D2255F"
+msgid "正在记笔记..."
+msgstr "Now taking notes......"
+
+#. Key:	5835DEEC474B367C1BB8428F9D6593BB
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_2.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_2.Text
+msgctxt ",5835DEEC474B367C1BB8428F9D6593BB"
+msgid "返回"
+msgstr "Back"
+
+#. Key:	5954E4CF4CF8947599A9C0A4C7AD9C50
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_46.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_46.Text
+msgctxt ",5954E4CF4CF8947599A9C0A4C7AD9C50"
+msgid "玩法概述"
+msgstr "About"
+
+#. Key:	599C748E4C239F050952C6A0E441204F
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/GameEndUI.GameEndUI_C:WidgetTree.TextBlock_1.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/GameEndUI.GameEndUI_C:WidgetTree.TextBlock_1.Text
+msgctxt ",599C748E4C239F050952C6A0E441204F"
+msgid "回到初始界面"
+msgstr "Back to Menu"
+
+#. Key:	5CD55345458D2914C8273BB2FED00CBF
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.TextBlock.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.TextBlock.Text
+msgctxt ",5CD55345458D2914C8273BB2FED00CBF"
+msgid "正在记笔记..."
+msgstr "Now taking notes"
+
+#. Key:	5EE5FD6048C3041D8C49688000B1850C
+#. SourceLocation:	/Game/Class9/Blueprints/Base/BP_Class9GameMode.BP_Class9GameMode_C:ExecuteUbergraph_BP_Class9GameMode [Script Bytecode]
+#: /Game/Class9/Blueprints/Base/BP_Class9GameMode.BP_Class9GameMode_C:ExecuteUbergraph_BP_Class9GameMode [Script Bytecode]
+msgctxt ",5EE5FD6048C3041D8C49688000B1850C"
+msgid "游戏失败!"
+msgstr "YOU FAILED!"
+
+#. Key:	5F0BE9504523374E41A23788E460ECEA
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_56.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_56.Text
+msgctxt ",5F0BE9504523374E41A23788E460ECEA"
+msgid "开发者作弊选项"
+msgstr ""
+
+#. Key:	67BA5B374B1D4C3EE42D2A8ADD7E2A2E
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveBlur [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveBlur [Script Bytecode]
+msgctxt ",67BA5B374B1D4C3EE42D2A8ADD7E2A2E"
+msgid "移除模糊"
+msgstr ""
+
+#. Key:	6ADF6FF34FFD1B28810D5EAE6E19AAE1
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_6.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_6.Text
+msgctxt ",6ADF6FF34FFD1B28810D5EAE6E19AAE1"
+msgid "清除模糊"
+msgstr ""
+
+#. Key:	76BFE37F42E957B8EB5129954F6FF566
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_0.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_0.Text
+msgctxt ",76BFE37F42E957B8EB5129954F6FF566"
+msgid "        使用键盘的AD键左右移动视角，按住E可以集中注意力观察，在按住W键且视角位于正前方时，Q键用来翻书(左边)，E键用于记笔记(右边)。\r\n        坚持到下课不被发现即可获得胜利。\r\n        目前游戏已制作完成的关卡有：\r\n        早自习、第四节课(英语)。"
+msgstr "Class begins!\r\nStand up!\r\nGood morning,teacher!\r\nGood morning everybody,sit down please.Now,let's recite our slogan.\r\n\"I love English.\""
+
+#. Key:	772FD8EE4CDCDEB86BBFA6ACBF05829B
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_4.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_4.Text
+msgctxt ",772FD8EE4CDCDEB86BBFA6ACBF05829B"
+msgid "是"
+msgstr "Yes"
+
+#. Key:	7C01373E47E8CFB8CB75F9A8CF21B220
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveUsage [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveUsage [Script Bytecode]
+msgctxt ",7C01373E47E8CFB8CB75F9A8CF21B220"
+msgid "取消移除负担"
+msgstr ""
+
+#. Key:	8417D4454F1110983559B28F65E12186
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.RightWarning.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.RightWarning.Text
+msgctxt ",8417D4454F1110983559B28F65E12186"
+msgid "WARNING"
+msgstr "WARNING"
+
+#. Key:	8AB2EE2647319B29630EC4BAEA9E6226
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.TextBlock_0.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.TextBlock_0.Text
+msgctxt ",8AB2EE2647319B29630EC4BAEA9E6226"
+msgid "0"
+msgstr "0"
+
+#. Key:	8C3AD4E0467EC00B7F524FAED0ADF51C
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherKY.Default__BP_TeacherKY_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherKY.Default__BP_TeacherKY_C:Name.Text
+msgctxt ",8C3AD4E0467EC00B7F524FAED0ADF51C"
+msgid "生物老师"
+msgstr "Biology Teacher"
+
+#. Key:	8E7FDA0A45AA7CA61886B6A11EEBE8E3
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_8.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_8.Text
+msgctxt ",8E7FDA0A45AA7CA61886B6A11EEBE8E3"
+msgid "测试模式"
+msgstr "Test Mode"
+
+#. Key:	93E9BE8E4BAA28B4EB053EAB20106DE5
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.CTT.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.CTT.Text
+msgctxt ",93E9BE8E4BAA28B4EB053EAB20106DE5"
+msgid "10:10"
+msgstr "10:10"
+
+#. Key:	97DAFD324BC492A8ACCA7BB89BE93802
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.PowerText.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.PowerText.Text
+msgctxt ",97DAFD324BC492A8ACCA7BB89BE93802"
+msgid "100"
+msgstr "100"
+
+#. Key:	9A3E62A64F4493EF7B958E9CEDC2C709
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Expose [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Expose [Script Bytecode]
+msgctxt ",9A3E62A64F4493EF7B958E9CEDC2C709"
+msgid "取消暴露老师"
+msgstr ""
+
+#. Key:	9B159ECF4C286E03C45594B30F826B0E
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.Text.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.Text.Text
+msgctxt ",9B159ECF4C286E03C45594B30F826B0E"
+msgid "移除"
+msgstr "Remove"
+
+#. Key:	A2B74C944DB42828E3DAB499F16418C4
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_0.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_0.Text
+msgctxt ",A2B74C944DB42828E3DAB499F16418C4"
+msgid "召唤"
+msgstr ""
+
+#. Key:	A4D56452434A1ECB7A0E7F896416F2BF
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.ClassInfo.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.ClassInfo.Text
+msgctxt ",A4D56452434A1ECB7A0E7F896416F2BF"
+msgid "第一节课—物理"
+msgstr ""
+
+#. Key:	A52314FE4E1C173BD98E1D8B2602F2DD
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveUsage [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveUsage [Script Bytecode]
+msgctxt ",A52314FE4E1C173BD98E1D8B2602F2DD"
+msgid "移除负担"
+msgstr ""
+
+#. Key:	AB9FBBA146E363D3934F7F86C4DC9010
+#. SourceLocation:	/Game/Class9/Levels/MiniGameLevel.MiniGameLevel:PersistentLevel.TextRenderActor_1.NewTextRenderComponent.Text
+#: /Game/Class9/Levels/MiniGameLevel.MiniGameLevel:PersistentLevel.TextRenderActor_1.NewTextRenderComponent.Text
+msgctxt ",AB9FBBA146E363D3934F7F86C4DC9010"
+msgid "这是小游戏关卡，3秒后会跳转至主界面"
+msgstr ""
+
+#. Key:	C21CC0A3443751092A683FBA8DB1BEE7
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock.Text
+msgctxt ",C21CC0A3443751092A683FBA8DB1BEE7"
+msgid "跳关并删除存档"
+msgstr ""
+
+#. Key:	C341B6A14794234F872EEDAC01463B23
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_5.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_5.Text
+msgctxt ",C341B6A14794234F872EEDAC01463B23"
+msgid "暴露老师"
+msgstr ""
+
+#. Key:	CC9E255D41FF0D2E6CED9ABFA4ADDE6E
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.文本.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.文本.Text
+msgctxt ",CC9E255D41FF0D2E6CED9ABFA4ADDE6E"
+msgid "无敌"
+msgstr ""
+
+#. Key:	CE2396B64E70402BD5B3E2AEF2636730
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_3.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_3.Text
+msgctxt ",CE2396B64E70402BD5B3E2AEF2636730"
+msgid "继续游戏"
+msgstr "Continue"
+
+#. Key:	CEA1C9894EA6C38CFA12C78EA52A1F76
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:GetRPretnding [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:GetRPretnding [Script Bytecode]
+msgctxt ",CEA1C9894EA6C38CFA12C78EA52A1F76"
+msgid "正在翻书..."
+msgstr "Now reading......"
+
+#. Key:	CFCE23754BF03F70C60F69B45EA9440D
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_9.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_9.Text
+msgctxt ",CFCE23754BF03F70C60F69B45EA9440D"
+msgid "返回"
+msgstr "Back"
+
+#. Key:	D1CE97894BDAAA45E09F00A06B49AD52
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherLTC.Default__BP_TeacherLTC_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherLTC.Default__BP_TeacherLTC_C:Name.Text
+msgctxt ",D1CE97894BDAAA45E09F00A06B49AD52"
+msgid "语文老师"
+msgstr "Chinese Teacher"
+
+#. Key:	D3AD49B24D95617C0D371BACC2F78259
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveShadow [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_RemoveShadow [Script Bytecode]
+msgctxt ",D3AD49B24D95617C0D371BACC2F78259"
+msgid "取消移除双影"
+msgstr ""
+
+#. Key:	D9F91E0342B06130BA6B60A668A3CB61
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_5.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_5.Text
+msgctxt ",D9F91E0342B06130BA6B60A668A3CB61"
+msgid "否"
+msgstr "No"
+
+#. Key:	DAEB587A4C69717DABDE0399F139DFF0
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Choose.Choose_C:WidgetTree.TextBlock_0.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Choose.Choose_C:WidgetTree.TextBlock_0.Text
+msgctxt ",DAEB587A4C69717DABDE0399F139DFF0"
+msgid "是"
+msgstr "Yes"
+
+#. Key:	DBE349AE4CC81BF34F8571858FDEF607
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.Power.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.Power.Text
+msgctxt ",DBE349AE4CC81BF34F8571858FDEF607"
+msgid "体力"
+msgstr "Power"
+
+#. Key:	E07061E345CA1A974A9A35877A06D70A
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherDDZ.Default__BP_TeacherDDZ_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherDDZ.Default__BP_TeacherDDZ_C:Name.Text
+msgctxt ",E07061E345CA1A974A9A35877A06D70A"
+msgid "英语老师"
+msgstr "English Teacher"
+
+#. Key:	E4F09F004696AEFB58C4D08791EF5440
+#. SourceLocation:	/Game/Class9/Blueprints/Characters/Teachers/BP_TeacherZRX.Default__BP_TeacherZRX_C:Name.Text
+#: /Game/Class9/Blueprints/Characters/Teachers/BP_TeacherZRX.Default__BP_TeacherZRX_C:Name.Text
+msgctxt ",E4F09F004696AEFB58C4D08791EF5440"
+msgid "年级主任"
+msgstr "Head Teacher"
+
+#. Key:	E5EF025A473D90D6EA3975B7C33C1C08
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/GameEndUI.GameEndUI_C:WidgetTree.EndText.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/GameEndUI.GameEndUI_C:WidgetTree.EndText.Text
+msgctxt ",E5EF025A473D90D6EA3975B7C33C1C08"
+msgid "你已被 生物老师 发现，游戏结束。"
+msgstr ""
+
+#. Key:	E78640744350240F787858A78FE6C1E0
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock.Text
+msgctxt ",E78640744350240F787858A78FE6C1E0"
+msgid "退出游戏"
+msgstr "Back to Reality"
+
+#. Key:	E7AA526C48A89801528C4EBDCD3ED736
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_7.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.TextBlock_7.Text
+msgctxt ",E7AA526C48A89801528C4EBDCD3ED736"
+msgid "删除存档"
+msgstr "Delete Slot"
+
+#. Key:	F0CFBEDD4DE013DA8103E9A8D54AD557
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Expose [Script Bytecode]
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:GetText_Expose [Script Bytecode]
+msgctxt ",F0CFBEDD4DE013DA8103E9A8D54AD557"
+msgid "暴露老师"
+msgstr ""
+
+#. Key:	F216617848DD648DADB5408DBC9F3626
+#. SourceLocation:	/Game/Class9/Levels/PlotLevel.PlotLevel:PersistentLevel.TextRenderActor_1.NewTextRenderComponent.Text
+#: /Game/Class9/Levels/PlotLevel.PlotLevel:PersistentLevel.TextRenderActor_1.NewTextRenderComponent.Text
+msgctxt ",F216617848DD648DADB5408DBC9F3626"
+msgid "这是剧情关卡，3秒后将跳转至游戏关卡"
+msgstr ""
+
+#. Key:	F2C08B9B4B05F10204AE908A8A0391C7
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_1.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/DeveloperCheatEngine.DeveloperCheatEngine_C:WidgetTree.TextBlock_1.Text
+msgctxt ",F2C08B9B4B05F10204AE908A8A0391C7"
+msgid "移除双影"
+msgstr ""
+
+#. Key:	F3DC69DF4AC42907329840B0BB2E52A7
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.LeftWarning.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.LeftWarning.Text
+msgctxt ",F3DC69DF4AC42907329840B0BB2E52A7"
+msgid "WARNING"
+msgstr "WARNING"
+
+#. Key:	F44C10F74EA3894CD8881784C489D3FF
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.CTTInfo.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.CTTInfo.Text
+msgctxt ",F44C10F74EA3894CD8881784C489D3FF"
+msgid "当前时间:"
+msgstr "Current Time:"
+
+#. Key:	F681E7D2403BA3C4F0E06DA3E9119874
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.BehindWarning.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Power.Power_C:WidgetTree.BehindWarning.Text
+msgctxt ",F681E7D2403BA3C4F0E06DA3E9119874"
+msgid "WARNING"
+msgstr "WARNING"
+
+#. Key:	FA70FD794CFB7E75AB6DAEB7FCDF4E47
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.Title.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.Title.Text
+msgctxt ",FA70FD794CFB7E75AB6DAEB7FCDF4E47"
+msgid "Class9"
+msgstr "Class9"
+
+#. Key:	D94C82E24E6143475C6924B8FA927ED0
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Default__Main_C.LvInfo
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Default__Main_C.LvInfo
+msgctxt "UMG,D94C82E24E6143475C6924B8FA927ED0"
+msgid "第{Level}关,剩余体力{PowerLeft}"
+msgstr "Level {Level},Power Left {PowerLeft}"
+
+#. Key:	E4F6192B4A70E5B530B7508F8C761CE5
+#. SourceLocation:	/Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.CurrentData.Text
+#: /Game/Class9/Blueprints/UMG/WidgetBP/Main.Main_C:WidgetTree.CurrentData.Text
+msgctxt "UMG,E4F6192B4A70E5B530B7508F8C761CE5"
+msgid "文本块"
+msgstr ""
+

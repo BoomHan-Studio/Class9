@@ -70,9 +70,9 @@ void AProtagonist::BeginPlay()
 	TArray<AActor*> Cameras;
 	UGameplayStatics::GetAllActorsWithTag(this, TEXT("PlayerCamera"), Cameras);
 	ForwardCamera = Cameras[0];
-	UKismetSystemLibrary::PrintString(this, ForwardCamera->GetActorLocation().ToCompactString(), true, false, FLinearColor::Green, 5.f);
+	//UKismetSystemLibrary::PrintString(this, ForwardCamera->GetActorLocation().ToCompactString(), true, false, FLinearColor::Green, 5.f);
 	ForwardCamera->SetActorLocation(PlayerCamera->GetComponentToWorld().GetLocation());
-	UKismetSystemLibrary::PrintString(this, ForwardCamera->GetActorLocation().ToCompactString(), true, false, FLinearColor::Green, 5.f);
+	//UKismetSystemLibrary::PrintString(this, ForwardCamera->GetActorLocation().ToCompactString(), true, false, FLinearColor::Green, 5.f);
 	LeftCamera = Cameras[1];
 	BackwardCamera = Cameras[2];
 	RightCamera = Cameras[3];

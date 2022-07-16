@@ -52,4 +52,20 @@ public:
 	{
 		return Real2GameTimeConvertRatio;
 	}
+
+protected:
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "数据|地图", DisplayName = "地图结点键值对")
+	TMap<FName, TObjectPtr<class AMapNode>> MapNodesKvp;
+
+	UPROPERTY(EditDefaultsOnly, Category = "类模板", DisplayName = "地图结点类")
+	TSubclassOf<AMapNode> SubclassOfMapNode;
+
+public:
+
+	UFUNCTION(BlueprintPure, DisplayName = "根据结点名获取结点")
+	AMapNode* GetNodeByName(FName InName) const;
+
+	UFUNCTION(BlueprintPure, DisplayName = "根据结点获取结点名")
+	FName GetNameByNode(AMapNode* InNode) const;
 };

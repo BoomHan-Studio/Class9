@@ -16,6 +16,8 @@ class CLASS9_API AMainGameModeBase : public AGameModeBase
 
 public:
 
+	friend class AEnemy;
+
 	AMainGameModeBase();
 
 	virtual void BeginPlay() override;
@@ -56,7 +58,7 @@ public:
 protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "数据|地图", DisplayName = "地图结点键值对")
-	TMap<FName, TObjectPtr<class AMapNode>> MapNodesKvp;
+	TMap<FName, class AMapNode*> MapNodesKvp;
 
 	UPROPERTY(EditDefaultsOnly, Category = "类模板", DisplayName = "地图结点类")
 	TSubclassOf<AMapNode> SubclassOfMapNode;

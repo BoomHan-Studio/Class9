@@ -29,7 +29,7 @@ enum class EProtagonistState : uint8
 	Idle = 0 UMETA(DisplayName = "闲置"),
 	Turning = 1 UMETA(DisplayName = "转向"),
 	Aiming = 2 UMETA(DisplayName = "集中"),
-	LeftPretending = 4 UMETA(DisplayName = "左伪装"),
-	RightPretending = 8 UMETA(DisplayName = "右伪装"),
+	RightPretending = 4 UMETA(DisplayName = "左伪装"),
+	LeftPretending = 8 UMETA(DisplayName = "右伪装"),
 	Punished = 16 UMETA(DisplayName = "受罚"),
 };

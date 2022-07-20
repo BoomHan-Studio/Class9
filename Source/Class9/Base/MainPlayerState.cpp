@@ -53,87 +53,87 @@ void AMainPlayerState::Tick(float DeltaSeconds)
 
 void AMainPlayerState::SetPlayerTurning()
 {
-	StateCode |= 0b00000001u;
+	StateCode |= uint8(EProtagonistState::Turning);
 }
 
 void AMainPlayerState::ResetPlayerTurning()
 {
-	StateCode &= 0b11111110u;
+	StateCode &= ~uint8(EProtagonistState::LeftPretending);
 }
 
 void AMainPlayerState::SetPlayerAiming()
 {
-	StateCode |= 0b00000010u;
+	StateCode |= uint8(EProtagonistState::Aiming);
 }
 
 void AMainPlayerState::ResetPlayerAiming()
 {
-	StateCode &= 0b11111101u;
+	StateCode &= ~uint8(EProtagonistState::Aiming);
 }
 
 void AMainPlayerState::SetPlayerLeftPretending()
 {
-	StateCode |= 0b00000100u;
+	StateCode |= uint8(EProtagonistState::LeftPretending);
 }
 
 void AMainPlayerState::ResetPlayerLeftPretending()
 {
-	StateCode &= 0b11111011u;
+	StateCode &= ~uint8(EProtagonistState::LeftPretending);
 }
 
 void AMainPlayerState::SetPlayerRightPretending()
 {
-	StateCode |= 0b00001000u;
+	StateCode |= uint8(EProtagonistState::RightPretending);
 }
 
 void AMainPlayerState::ResetPlayerRightPretending()
 {
-	StateCode &= 0b11110111u;
+	StateCode &= ~uint8(EProtagonistState::RightPretending);
 }
 
 void AMainPlayerState::SetPlayerPunished()
 {
-	StateCode |= 0b00010000u;
+	StateCode |= uint8(EProtagonistState::Punished);
 }
 
 void AMainPlayerState::ResetPlayerPunished()
 {
-	StateCode &= 0b11101111u;
+	StateCode &= ~uint8(EProtagonistState::Punished);
 }
 
 bool AMainPlayerState::IsPlayerIdle() const
 {
-	return StateCode == 0u;
+	return StateCode == uint8(EProtagonistState::Idle);
 }
 
 bool AMainPlayerState::IsPlayerTurning() const
 {
-	return bool(StateCode & 0b00000001u);
+	return bool(StateCode & uint8(EProtagonistState::Turning));
 }
 
 bool AMainPlayerState::IsPlayerAiming() const
 {
-	return bool(StateCode & 0b00000010u);
+	return bool(StateCode & uint8(EProtagonistState::Aiming));
 }
 
 bool AMainPlayerState::IsPlayerLeftPretending() const
 {
-	return bool(StateCode & 0b00000100u);
+	return bool(StateCode & uint8(EProtagonistState::LeftPretending));
 }
 
 bool AMainPlayerState::IsPlayerRightPretending() const
 {
-	return bool(StateCode & 0b00001000u);
+	return bool(StateCode & uint8(EProtagonistState::RightPretending));
 }
 
 bool AMainPlayerState::IsPlayerPretending() const
 {
-	return bool(StateCode & 0b00001100u);
+	return bool(StateCode & (uint8(EProtagonistState::RightPretending) | uint8(EProtagonistState::LeftPretending)));
 }
 
 bool AMainPlayerState::IsPlayerPunished() const
 {
-	return bool(StateCode & 0b00010000u);
+	return bool(StateCode & uint8(EProtagonistState::Punished));
 }
 
 EPlayerDirection AMainPlayerState::GetPlayerDirection() const

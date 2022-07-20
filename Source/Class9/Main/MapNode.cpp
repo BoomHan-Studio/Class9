@@ -26,3 +26,12 @@ void AMapNode::Tick(float DeltaTime)
 
 }
 
+void AMapNode::AddEnemy(AEnemy* Enemy)
+{
+	EnemiesInThisNode.FindOrAdd(Enemy);
+}
+
+void AMapNode::RemoveEnemy(AEnemy* Enemy)
+{
+	EnemiesInThisNode.Remove(Enemy);
+}

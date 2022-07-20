@@ -5,12 +5,14 @@
 #include "CoreMinimal.h"
 #include "MapNode.h"
 #include "Class9/Base/MainGameModeBase.h"
+#include "Class9/Structs/EnemyPropertiesNode.h"
 #include "Class9/Structs/MapAdjTable.h"
 #include "Class9/Structs/MapGraph.h"
 #include "GameFramework/Actor.h"
+#include "Kismet/GameplayStatics.h"
 #include "Enemy.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FEnterNode, AMapNode*, From);
+DECLARE_DYNAMIC_DELEGATE_TwoParams(FEnterNode, AMapNode*, From, AMapNode*, To);
 
 UCLASS(DisplayName = "敌人")
 class CLASS9_API AEnemy : public APawn
@@ -43,55 +45,21 @@ protected:
 		return GameModeBase->MapNodesKvp;
 	}
 
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C0时(委托)")
-	FEnterNode WhenEnterC0;
+	UPROPERTY(BlueprintReadOnly, DisplayName = "当移动时(委托)")
+	FEnterNode WhenMove;
 
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C1时(委托)")
-	FEnterNode WhenEnterC1;
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, DisplayName = "当移动时")
+	void OnMove(AMapNode* From, AMapNode* To);
+	void OnMove_Implementation(AMapNode* From, AMapNode* To);
 
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C2时(委托)")
-	FEnterNode WhenEnterC2;
+	void OnRemove(AMapNode* From);
 
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C3时(委托)")
-	FEnterNode WhenEnterC3;
+protected:
 
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C4时(委托)")
-	FEnterNode WhenEnterC4;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, DisplayName = "", Category = "数据|详细属性")
+	TMap<FName, FEnemyPropertiesNode> NodesMap;
+	//FEnemyPropertiesNode Node;
 
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C5时(委托)")
-	FEnterNode WhenEnterC5;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C6时(委托)")
-	FEnterNode WhenEnterC6;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达C7时(委托)")
-	FEnterNode WhenEnterC7;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达L0时(委托)")
-	FEnterNode WhenEnterL0;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达L1时(委托)")
-	FEnterNode WhenEnterL1;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达L2时(委托)")
-	FEnterNode WhenEnterL2;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达R0时(委托)")
-	FEnterNode WhenEnterR0;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达R1时(委托)")
-	FEnterNode WhenEnterR1;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达H0时(委托)")
-	FEnterNode WhenEnterH0;
-
-	UPROPERTY(BlueprintReadOnly, DisplayName = "当抵达H1时(委托)")
-	FEnterNode WhenEnterH1;
-
-
-	/*UFUNCTION(BlueprintCallable)
-	virtual void OnEnterC0()
-	{
-		
-	}*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "数据", DisplayName = "当前所在结点")
+	AMapNode* CurrentNode;
 };

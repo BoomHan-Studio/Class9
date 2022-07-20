@@ -57,6 +57,23 @@ void AMainGameModeBase::BeginPlay()
 	MapNodesKvp[TEXT("R1")] = World->SpawnActor<AMapNode>(SubclassOfMapNode);
 	MapNodesKvp[TEXT("H0")] = World->SpawnActor<AMapNode>(SubclassOfMapNode);
 	MapNodesKvp[TEXT("H1")] = World->SpawnActor<AMapNode>(SubclassOfMapNode);
+	
+	MapNodesKvp[TEXT("C0")]->NodeName = TEXT("C0");
+	MapNodesKvp[TEXT("C1")]->NodeName = TEXT("C1");
+	MapNodesKvp[TEXT("C2")]->NodeName = TEXT("C2");
+	MapNodesKvp[TEXT("C3")]->NodeName = TEXT("C3");
+	MapNodesKvp[TEXT("C4")]->NodeName = TEXT("C4");
+	MapNodesKvp[TEXT("C5")]->NodeName = TEXT("C5");
+	MapNodesKvp[TEXT("C6")]->NodeName = TEXT("C6");
+	MapNodesKvp[TEXT("C7")]->NodeName = TEXT("C7");
+
+	MapNodesKvp[TEXT("L0")]->NodeName = TEXT("L0");
+	MapNodesKvp[TEXT("L1")]->NodeName = TEXT("L1");
+	MapNodesKvp[TEXT("L2")]->NodeName = TEXT("L2");
+	MapNodesKvp[TEXT("R0")]->NodeName = TEXT("R0");
+	MapNodesKvp[TEXT("R1")]->NodeName = TEXT("R1");
+	MapNodesKvp[TEXT("H0")]->NodeName = TEXT("H0");
+	MapNodesKvp[TEXT("H1")]->NodeName = TEXT("H1");
 }
 
 void AMainGameModeBase::Tick(float DeltaSeconds)

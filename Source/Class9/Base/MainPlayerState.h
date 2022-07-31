@@ -33,7 +33,7 @@ protected:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, Category = "状态", DisplayName = "状态代码")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "状态", DisplayName = "状态代码")
 	uint8 StateCode;
 
 	UPROPERTY(VisibleAnywhere, Category = "状态|输入", DisplayName = "伪装按键是否按下")

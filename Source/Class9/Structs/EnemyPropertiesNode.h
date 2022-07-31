@@ -2,7 +2,6 @@
 
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "EnemyPropertiesNode.generated.h"
 
 UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
@@ -21,7 +20,7 @@ struct CLASS9_API FEnemyPropertiesNode
 {
 	GENERATED_BODY()
 
-	UPROPERTY(VisibleAnywhere, DisplayName = "绑定结点")
+	UPROPERTY(VisibleInstanceOnly, DisplayName = "绑定结点")
 	class AMapNode* BoundNode;
 
 	UPROPERTY(EditAnywhere, DisplayName = "位置坐标")

@@ -58,7 +58,7 @@ void AMainPlayerState::SetPlayerTurning()
 
 void AMainPlayerState::ResetPlayerTurning()
 {
-	StateCode &= ~uint8(EProtagonistState::LeftPretending);
+	StateCode &= ~uint8(EProtagonistState::Turning);
 }
 
 void AMainPlayerState::SetPlayerAiming()

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EnemyPropertiesNode.h"
 #include "MapAdjTable.generated.h"
 
 USTRUCT(BlueprintType)
@@ -34,10 +35,24 @@ struct CLASS9_API FNodeContainer
 
 public:
 
-	//FNodeContainer();
+	FNodeContainer() = default;
+	
+	FORCEINLINE FNodeContainer(AMapNode* Node, FVector Vector, float Angle, bool bMonitor, uint8 Code, std::initializer_list<FMapAdjTableNode> InitList)
+		:PropertiesNode(Node, Vector, Angle, bMonitor, Code), AdjNodes(InitList)
+	{
+		
+	}
 
-	UPROPERTY(EditAnywhere)
-	TArray<FMapAdjTableNode> Nodes;
+	UPROPERTY(EditAnywhere, DisplayName = "结点属性")
+	FEnemyPropertiesNode PropertiesNode;
+
+	UPROPERTY(EditAnywhere, DisplayName = "邻接表")
+	TArray<FMapAdjTableNode> AdjNodes;
+
+	/*FORCEINLINE bool operator ==(const FNodeContainer& Container) const
+	{
+		return PropertiesNode.BoundNode == Container.PropertiesNode.BoundNode;
+	}*/
 };
 
 /**
@@ -50,7 +65,13 @@ struct CLASS9_API FMapAdjTable
 
 public:
 
-	//FMapAdjTable();
+	FMapAdjTable() = default;
+
+	FORCEINLINE FMapAdjTable(std::initializer_list<TPairInitializer<const FName&, const FNodeContainer&>> InitList)
+		:Table(InitList)
+	{
+		
+	}
 
 	UPROPERTY(EditAnywhere)
 	TMap<FName, FNodeContainer> Table;

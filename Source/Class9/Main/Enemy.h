@@ -12,7 +12,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Enemy.generated.h"
 
-DECLARE_DYNAMIC_DELEGATE_TwoParams(FEnterNode, AMapNode*, From, AMapNode*, To);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FEnterNode, const FEnemyPropertiesNode&, From, const FEnemyPropertiesNode&, To);
 
 UCLASS(DisplayName = "敌人")
 class CLASS9_API AEnemy : public APawn
@@ -31,9 +31,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void BeginDestroy() override;
+
 protected:
 
-	UPROPERTY(EditAnywhere, Category = "数据", DisplayName = "敌人图表")
+	UPROPERTY(EditAnywhere, Category = "数据|详细属性", DisplayName = "敌人图表")
 	FMapAdjTable EnemyGraph;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "对象", DisplayName = "游戏模式对象")
@@ -49,17 +51,29 @@ protected:
 	FEnterNode WhenMove;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, DisplayName = "当移动时")
-	void OnMove(AMapNode* From, AMapNode* To);
-	void OnMove_Implementation(AMapNode* From, AMapNode* To);
+	void OnMove(const FEnemyPropertiesNode& From, const FEnemyPropertiesNode& To);
+	void OnMove_Implementation(const FEnemyPropertiesNode& From, const FEnemyPropertiesNode& To);
 
-	void OnRemove(AMapNode* From);
 
 protected:
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, DisplayName = "", Category = "数据|详细属性")
-	TMap<FName, FEnemyPropertiesNode> NodesMap;
+	/*UPROPERTY(EditAnywhere, BlueprintReadOnly, DisplayName = "", Category = "数据|详细属性")
+	TMap<FName, FEnemyPropertiesNode> NodesMap;*/
 	//FEnemyPropertiesNode Node;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "数据", DisplayName = "当前所在结点")
-	AMapNode* CurrentNode;
+	FEnemyPropertiesNode CurrentNode;
+
+	UFUNCTION()
+	void BindNode(TMap<FName, FNodeContainer>& Map, FName Name);
+
+protected:
+
+	UPROPERTY(VisibleAnywhere, Category = "骨骼网格体")
+	TObjectPtr<USkeletalMeshComponent> EnemyMesh;
+
+public:
+	
+	UFUNCTION()
+	void Move(FName NodeName);
 };

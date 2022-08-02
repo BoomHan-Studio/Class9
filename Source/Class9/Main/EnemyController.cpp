@@ -16,6 +16,11 @@ void AEnemyController::BeginPlay()
 {
 	Super::BeginPlay();
 
+	//BehaviourDelegate.BindUObject()
+	BehaviourDelegate.BindUObject(this, &AEnemyController::Behave);
+	MoveDelegate.BindUObject(this, &AEnemyController::ExecMove);
+	MonitorDelegate.BindUObject(this, &AEnemyController::ExecMonitor);
+
 	World = GetWorld();
 	EnemyPawn = Cast<AEnemy>(GetPawn());
 
@@ -32,15 +37,23 @@ void AEnemyController::Tick(float DeltaSeconds)
 void AEnemyController::Behave()
 {
 	auto& TimerManager = World->GetTimerManager();
-	TimerManager.SetTimer(TaskHandle, this, &AEnemyController::ExecMove, UKismetMathLibrary::RandomFloatInRange(EnemyPawn->MinMoveDelay, EnemyPawn->MaxMoveDelay));
-	/*if (!EnemyPawn->CurrentNode.bIsToMonitor)
+
+	FTimerDelegate* TargetDelegate;
+	float TaskDuration;
+
+	if (true)
 	{
-		TimerManager.SetTimer(TaskHandle, this, &AEnemyController::ExecMove, UKismetMathLibrary::RandomFloatInRange(EnemyPawn->MinMoveDelay, EnemyPawn->MaxMoveDelay));
+		TaskDuration = EnemyPawn->GenerateMoveDelay();
+		TargetDelegate = &MoveDelegate;
 	}
 	else
 	{
-		
-	}*/
+		TaskDuration = EnemyPawn->GenerateMonitorDuration();
+		TargetDelegate = &MonitorDelegate;
+	}
+	TimerManager.SetTimer(TaskHandle, *TargetDelegate, TaskDuration, false);
+
+	TimerManager.SetTimer(BehaviourHandle, BehaviourDelegate, TaskDuration + 0.01f, false);
 }
 
 void AEnemyController::ExecMove()

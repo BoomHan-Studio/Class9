@@ -30,7 +30,16 @@ public:
 protected:
 
 	UPROPERTY()
+	FTimerHandle BehaviourHandle;
+
+	UPROPERTY()
 	FTimerHandle TaskHandle;
+
+	FTimerDelegate BehaviourDelegate;
+	
+	FTimerDelegate MoveDelegate;
+
+	FTimerDelegate MonitorDelegate;
 
 	UPROPERTY()
 	TObjectPtr<UWorld> World;

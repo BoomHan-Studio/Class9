@@ -44,4 +44,6 @@ public:
 	void AddEnemy(AEnemy* Enemy);
 
 	void RemoveEnemy(AEnemy* Enemy);
+
+	bool TryRemoveEnemy(AEnemy* Enemy);
 };

@@ -3,7 +3,11 @@
 
 #include "Enemy.h"
 
+#include "EnemyController.h"
+#include "Class9/Base/MainPlayerState.h"
+#include "Class9/Base/Protagonist.h"
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 
 // Sets default values
 AEnemy::AEnemy()
@@ -14,10 +18,18 @@ AEnemy::AEnemy()
 		{TEXT("C6"), FNodeContainer()}, {TEXT("C7"), FNodeContainer()}, {TEXT("L0"), FNodeContainer()},
 		{TEXT("L1"), FNodeContainer()}, {TEXT("L2"), FNodeContainer()}, {TEXT("R0"), FNodeContainer()},
 		{TEXT("R1"), FNodeContainer()}, {TEXT("H0"), FNodeContainer()}, {TEXT("H1"), FNodeContainer()},
-	})
+	}),
+	MinMoveDelay(8.f),
+	MaxMoveDelay(11.f),
+	MinMonitorDuration(3.25f),
+	MaxMonitorDuration(4.25f),
+	ExpectedPercentage(0.15f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.TickInterval = .02f;
+
+	AIControllerClass = AEnemyController::StaticClass();
 
 	auto& Table = EnemyGraph.Table;
 	Table[TEXT("C0")].AdjNodes = {FMapAdjTableNode(TEXT("C1"), 1.5f), FMapAdjTableNode(TEXT("C2"), 1.5f),};
@@ -47,7 +59,11 @@ void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GameModeBase = Cast<AMainGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+	TObjectPtr<UWorld> World = GetWorld();
+
+	GameModeBase = Cast<AMainGameModeBase>(UGameplayStatics::GetGameMode(World));
+	Protagonist = Cast<AProtagonist>(UGameplayStatics::GetPlayerPawn(World, 0));
+	MainPlayerState = Cast<AMainPlayerState>(UGameplayStatics::GetPlayerState(World, 0));
 
 	auto& Table = EnemyGraph.Table;
 	for (auto It = Table.CreateConstIterator(); It; ++It)
@@ -55,6 +71,10 @@ void AEnemy::BeginPlay()
 		//UKismetSystemLibrary::PrintString(this, TEXT("BindNode"), true, false, FLinearColor::Green, 5.0f);
 		BindNode(Table, It->Key);
 	}
+
+	WhenMove.AddDynamic(this, &AEnemy::OnMove);
+	WhenMonitorBegin.AddDynamic(this, &AEnemy::OnMonitorBegin);
+	WhenMonitorEnd.AddDynamic(this, &AEnemy::OnMonitorEnd);
 }
 
 // Called every frame
@@ -62,21 +82,35 @@ void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (bPlayerIsLeftPretending) LeftPretendingDurationInSingleMonitor += DeltaTime;
+	if (bPlayerIsRightPretending) RightPretendingDurationInSingleMonitor += DeltaTime;
 }
 
 void AEnemy::BeginDestroy()
 {
 	Super::BeginDestroy();
 
-	CurrentNode.BoundNode->RemoveEnemy(this);
+	//CurrentNode.BoundNode->TryRemoveEnemy(this);
+}
+
+void AEnemy::InitializeNode(FName NodeName)
+{
+	CurrentNodeName = NodeName;
+	FTimerHandle Handle;
+	GetWorld()->GetTimerManager().SetTimer(Handle, this, &AEnemy::InitializeNode_Implementation, .02f, false);
+}
+
+void AEnemy::InitializeNode_Implementation()
+{
+	ReachNode(EnemyGraph.Table[CurrentNodeName].PropertiesNode);
 }
 
 void AEnemy::OnMove_Implementation(const FEnemyPropertiesNode& From, const FEnemyPropertiesNode& To)
 {
-	From.BoundNode->RemoveEnemy(this);
-	To.BoundNode->AddEnemy(this);
+	if (From.BoundNode) From.BoundNode->RemoveEnemy(this);
+	if (To.BoundNode) To.BoundNode->AddEnemy(this);
 
-	SetActorLocationAndRotation(To.Location, FRotator(0.f, 0.f, To.ViewAngle));
+	ReachNode(To);
 	/*if (!To)
 	{
 		OnRemove(From);
@@ -88,13 +122,75 @@ void AEnemy::OnMove_Implementation(const FEnemyPropertiesNode& From, const FEnem
 	}*/
 }
 
+void AEnemy::OnMonitorBegin_Implementation(uint8 MonitorCode)
+{
+	if (MonitorCode & uint8(EMonitorCode::Left))
+	{
+		//UKismetSystemLibrary::PrintString(this, Protagonist->WhenLeftPretendBegin.ToString<UObject>(), true, false, FLinearColor::Green, 99.f);
+		Protagonist->WhenLeftPretendBegin.AddDynamic(this, &AEnemy::SetLeftPretending);
+		Protagonist->WhenLeftPretendEnd.AddDynamic(this, &AEnemy::ResetLeftPretending);
+		if (MainPlayerState->IsPlayerLeftPretending()) SetLeftPretending();
+	}
+	if (MonitorCode & uint8(EMonitorCode::Right))
+	{
+		Protagonist->WhenRightPretendBegin.AddDynamic(this, &AEnemy::SetRightPretending);
+		Protagonist->WhenRightPretendEnd.AddDynamic(this, &AEnemy::ResetRightPretending);
+		if (MainPlayerState->IsPlayerLeftPretending()) SetRightPretending();
+	}
+}
+
+void AEnemy::OnMonitorEnd_Implementation(uint8 MonitorCode)
+{
+	ResetLeftPretending();
+	ResetRightPretending();
+	LeftPretendingDurationInSingleMonitor = 0.f;
+	RightPretendingDurationInSingleMonitor = 0.f;
+	
+	if (MonitorCode | uint8(EMonitorCode::Left))
+	{
+		Protagonist->WhenLeftPretendBegin.RemoveDynamic(this, &AEnemy::SetLeftPretending);
+		Protagonist->WhenLeftPretendEnd.RemoveDynamic(this, &AEnemy::ResetLeftPretending);
+	}
+	if (MonitorCode | uint8(EMonitorCode::Right))
+	{
+		Protagonist->WhenRightPretendBegin.RemoveDynamic(this, &AEnemy::SetRightPretending);
+		Protagonist->WhenRightPretendEnd.RemoveDynamic(this, &AEnemy::ResetRightPretending);
+	}
+}
+
 void AEnemy::BindNode(TMap<FName, FNodeContainer>& Map, FName Name)
 {
-	
 	Map[Name].PropertiesNode.BoundNode = GameModeBase->GetNodeByName(Name);
 }
 
 void AEnemy::Move(FName NodeName)
 {
+	CurrentNodeName = NodeName;
 	WhenMove.Broadcast(CurrentNode, EnemyGraph.Table[NodeName].PropertiesNode);
+}
+
+void AEnemy::Monitor()
+{
+	WhenMonitorBegin.Broadcast(CurrentNode.MonitorDirectionCode);
+}
+
+void AEnemy::EndMonitor()
+{
+	WhenMonitorEnd.Broadcast(CurrentNode.MonitorDirectionCode);
+}
+
+void AEnemy::ReachNode(const FEnemyPropertiesNode& To)
+{
+	CurrentNode = To;
+	SetActorLocationAndRotation(To.Location, FRotator::MakeFromEuler(FVector(0.f, 0.f, To.ViewAngle)));
+}
+
+float AEnemy::GenerateMoveDelay() const
+{
+	return UKismetMathLibrary::RandomFloatInRange(MinMoveDelay, MaxMoveDelay);
+}
+
+float AEnemy::GenerateMonitorDuration() const
+{
+	return UKismetMathLibrary::RandomFloatInRange(MinMonitorDuration, MaxMonitorDuration);
 }

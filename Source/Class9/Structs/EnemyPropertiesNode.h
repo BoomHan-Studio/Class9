@@ -23,16 +23,16 @@ struct CLASS9_API FEnemyPropertiesNode
 	UPROPERTY(VisibleInstanceOnly, DisplayName = "绑定结点")
 	class AMapNode* BoundNode;
 
-	UPROPERTY(EditAnywhere, DisplayName = "位置坐标")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, DisplayName = "位置坐标")
 	FVector Location;
 
-	UPROPERTY(EditAnywhere, DisplayName = "视野方向角")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, DisplayName = "视野方向角")
 	float ViewAngle;
 
-	UPROPERTY(EditAnywhere, DisplayName = "是否为监控点")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, DisplayName = "是否为监控点")
 	bool bIsToMonitor;
 
-	UPROPERTY(EditAnywhere, DisplayName = "监控方向代码", meta = (Bitmask, BitmaskEnum = "EMonitorCode"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, DisplayName = "监控方向代码", meta = (Bitmask, BitmaskEnum = "EMonitorCode"))
 	uint8 MonitorDirectionCode;
 
 	FEnemyPropertiesNode() = default;

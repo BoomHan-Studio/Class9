@@ -35,3 +35,14 @@ void AMapNode::RemoveEnemy(AEnemy* Enemy)
 {
 	EnemiesInThisNode.Remove(Enemy);
 }
+
+bool AMapNode::TryRemoveEnemy(AEnemy* Enemy)
+{
+	if (EnemiesInThisNode.Find(Enemy))
+	{
+		RemoveEnemy(Enemy);
+		return true;
+	}
+
+	return false;
+}

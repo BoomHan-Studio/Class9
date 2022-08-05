@@ -74,6 +74,12 @@ public:
 	UFUNCTION(BlueprintPure, Category = "状态", DisplayName = "玩家是否受罚")
 	bool IsPlayerPunished() const;
 
+	UFUNCTION(BlueprintPure, DisplayName = "获取状态代码")
+	FORCEINLINE uint8 GetPlayerStateCode() const
+	{
+		return StateCode;
+	}
+
 protected:
 
 	UFUNCTION()

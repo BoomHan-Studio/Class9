@@ -18,6 +18,8 @@ void AMainController::BeginPlay()
 
 	Protagonist = Cast<AProtagonist>(GetPawn());
 	Protagonist->MainController = this;
+
+	SetShowMouseCursor(true);
 }
 
 void AMainController::Tick(float DeltaSeconds)

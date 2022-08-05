@@ -6,6 +6,9 @@
 #include "GameFramework/GameModeBase.h"
 #include "MainGameModeBase.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FVictory);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDefeat, class AEnemy*, Catcher);
+
 /**
  * 
  */
@@ -70,4 +73,29 @@ public:
 
 	UFUNCTION(BlueprintPure, DisplayName = "根据结点获取结点名")
 	FName GetNameByNode(AMapNode* InNode) const;
+
+public:
+	
+	UPROPERTY()
+	FVictory WhenVictory;
+
+	UPROPERTY()
+	FDefeat WhenDefeat;
+
+	UFUNCTION(BlueprintCallable, DisplayName = "游戏胜利")
+	void Victory();
+
+	//必须传入不为空的Enemy对象，否则此函数调用失败，并且会抛出异常。
+	UFUNCTION(BlueprintCallable, DisplayName = "游戏失败")
+	void Defeat(AEnemy* Catcher);
+
+protected:
+
+	UFUNCTION(BlueprintNativeEvent)
+	void OnVictory();
+	void OnVictory_Implementation();
+
+	UFUNCTION(BlueprintNativeEvent)
+	void OnDefeat(AEnemy* Catcher);
+	void OnDefeat_Implementation(AEnemy* Catcher);
 };

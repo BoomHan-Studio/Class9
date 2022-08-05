@@ -140,32 +140,32 @@ void AProtagonist::TurnRightEnd()
 
 void AProtagonist::AimBegin()
 {
-	UKismetSystemLibrary::PrintString(this, TEXT("AimBegin"), true, false, FLinearColor::Green);
+	//UKismetSystemLibrary::PrintString(this, TEXT("AimBegin"), true, false, FLinearColor::Green);
 }
 
 void AProtagonist::AimEnd()
 {
-	UKismetSystemLibrary::PrintString(this, TEXT("AimEnd"), true, false, FLinearColor::Red);
+	//UKismetSystemLibrary::PrintString(this, TEXT("AimEnd"), true, false, FLinearColor::Red);
 }
 
 void AProtagonist::LeftPretendBegin()
 {
-	UKismetSystemLibrary::PrintString(this, TEXT("LeftPretendBegin"), true, false, FLinearColor::Green);
+	//UKismetSystemLibrary::PrintString(this, TEXT("LeftPretendBegin"), true, false, FLinearColor::Green);
 }
 
 void AProtagonist::LeftPretendEnd()
 {
-	UKismetSystemLibrary::PrintString(this, TEXT("LeftPretendEnd"), true, false, FLinearColor::Red);
+	//UKismetSystemLibrary::PrintString(this, TEXT("LeftPretendEnd"), true, false, FLinearColor::Red);
 }
 
 void AProtagonist::RightPretendBegin()
 {
-	UKismetSystemLibrary::PrintString(this, TEXT("RightPretendBegin"), true, false, FLinearColor::Green);
+	//UKismetSystemLibrary::PrintString(this, TEXT("RightPretendBegin"), true, false, FLinearColor::Green);
 }
 
 void AProtagonist::RightPretendEnd()
 {
-	UKismetSystemLibrary::PrintString(this, TEXT("RightPretendEnd"), true, false, FLinearColor::Red);
+	//UKismetSystemLibrary::PrintString(this, TEXT("RightPretendEnd"), true, false, FLinearColor::Red);
 }
 
 #pragma endregion

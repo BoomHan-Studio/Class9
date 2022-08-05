@@ -74,6 +74,9 @@ void AMainGameModeBase::BeginPlay()
 	MapNodesKvp[TEXT("R1")]->NodeName = TEXT("R1");
 	MapNodesKvp[TEXT("H0")]->NodeName = TEXT("H0");
 	MapNodesKvp[TEXT("H1")]->NodeName = TEXT("H1");
+
+	WhenVictory.AddDynamic(this, &AMainGameModeBase::OnVictory);
+	WhenDefeat.AddDynamic(this, &AMainGameModeBase::OnDefeat);
 }
 
 void AMainGameModeBase::Tick(float DeltaSeconds)
@@ -103,4 +106,26 @@ FName AMainGameModeBase::GetNameByNode(AMapNode* InNode) const
 		UKismetSystemLibrary::PrintString(this, TEXT("警告：GetNameByNode访问的结点是野结点。"), true, true, FLinearColor::Red, 99.f);
 	}
 	return *NamePtr;
+}
+
+void AMainGameModeBase::Victory()
+{
+	WhenVictory.Broadcast();
+}
+
+void AMainGameModeBase::Defeat(AEnemy* Catcher)
+{
+	check (Catcher != nullptr);
+
+	WhenDefeat.Broadcast(Catcher);
+}
+
+void AMainGameModeBase::OnVictory_Implementation()
+{
+	
+}
+
+void AMainGameModeBase::OnDefeat_Implementation(AEnemy* Catcher)
+{
+	
 }

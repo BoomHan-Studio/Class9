@@ -35,11 +35,16 @@ protected:
 	UPROPERTY()
 	FTimerHandle TaskHandle;
 
+	UPROPERTY()
+	FTimerHandle TaskEndHandle;
+
 	FTimerDelegate BehaviourDelegate;
 	
 	FTimerDelegate MoveDelegate;
 
 	FTimerDelegate MonitorDelegate;
+
+	FTimerDelegate MonitorEndDelegate;
 
 	UPROPERTY()
 	TObjectPtr<UWorld> World;
@@ -50,6 +55,9 @@ protected:
 	UFUNCTION()
 	virtual void Behave();
 
+	UFUNCTION()
+	FORCEINLINE void FinishTask(float DeltaSeconds);
+
 protected:
 
 	UFUNCTION()
@@ -57,4 +65,17 @@ protected:
 
 	UFUNCTION()
 	virtual void ExecMonitor();
+
+	UFUNCTION()
+	virtual void ExecEndMonitor();
+
+	UFUNCTION(BlueprintCallable, DisplayName = "处理监听结果")
+	virtual void HandleMonitorResult(uint8 MonitorCode);
+
+protected:
+
+	UFUNCTION()
+	bool ShouldMonitor() const;
+
+	
 };

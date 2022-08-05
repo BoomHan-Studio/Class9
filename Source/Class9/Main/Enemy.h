@@ -177,4 +177,9 @@ protected:
 	virtual float GenerateMonitorDuration() const;
 
 	friend class AEnemyController;
+
+protected:
+
+	UFUNCTION()
+	virtual bool IsMonitorQualifiedWhenMonitorEnd(uint8 MonitorCode);
 };

@@ -29,28 +29,29 @@ AEnemy::AEnemy()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.TickInterval = .02f;
 
-	AIControllerClass = AEnemyController::StaticClass();
+	//AIControllerClass = AEnemyController::StaticClass();
 
 	auto& Table = EnemyGraph.Table;
-	Table[TEXT("C0")].AdjNodes = {FMapAdjTableNode(TEXT("C1"), 1.5f), FMapAdjTableNode(TEXT("C2"), 1.5f),};
-	Table[TEXT("C1")].AdjNodes = {FMapAdjTableNode(TEXT("C0"), 1.5f), FMapAdjTableNode(TEXT("C3"), 2.0f), FMapAdjTableNode(TEXT("L0"), 4.0f)};
-	Table[TEXT("C2")].AdjNodes = {FMapAdjTableNode(TEXT("C0"), 1.5f), FMapAdjTableNode(TEXT("C4"), 2.0f),};
-	Table[TEXT("C3")].AdjNodes = {FMapAdjTableNode(TEXT("C1"), 2.0f), FMapAdjTableNode(TEXT("C5"), 2.5f),};
-	Table[TEXT("C4")].AdjNodes = {FMapAdjTableNode(TEXT("C2"), 1.5f), FMapAdjTableNode(TEXT("C6"), 2.5f),};
-	Table[TEXT("C5")].AdjNodes = {FMapAdjTableNode(TEXT("C3"), 2.5f), FMapAdjTableNode(TEXT("C6"), 3.0f), FMapAdjTableNode(TEXT("C7"), 1.5f)};
-	Table[TEXT("C6")].AdjNodes = {FMapAdjTableNode(TEXT("C4"), 2.5f), FMapAdjTableNode(TEXT("C5"), 3.0f), FMapAdjTableNode(TEXT("C7"), 1.5f)};
-	Table[TEXT("C7")].AdjNodes = {FMapAdjTableNode(TEXT("C5"), 1.5f), FMapAdjTableNode(TEXT("C6"), 1.5f),};
-	
-	Table[TEXT("L0")].AdjNodes = {FMapAdjTableNode(TEXT("C1"), 4.0f), FMapAdjTableNode(TEXT("L1"), 2.0f), FMapAdjTableNode(TEXT("H0"), 12.0f)};
-	Table[TEXT("L1")].AdjNodes = {FMapAdjTableNode(TEXT("L0"), 2.0f), FMapAdjTableNode(TEXT("L2"), 2.0f),};
-	Table[TEXT("L2")].AdjNodes = {FMapAdjTableNode(TEXT("L1"), 2.0f), FMapAdjTableNode(TEXT("H1"), 100.0f),};
-	
-	Table[TEXT("R0")].AdjNodes = {FMapAdjTableNode(TEXT("R1"), 3.5f), FMapAdjTableNode(TEXT("H0"), 14.0f),};
-	Table[TEXT("R1")].AdjNodes = {FMapAdjTableNode(TEXT("R0"), 3.5f), FMapAdjTableNode(TEXT("H1"), 100.0f),};
-	
-	Table[TEXT("H0")].AdjNodes = {FMapAdjTableNode(TEXT("L0"), 12.0f), FMapAdjTableNode(TEXT("R0"), 14.0f),};
-	Table[TEXT("H1")].AdjNodes = {FMapAdjTableNode(TEXT("L2"), 100.0f), FMapAdjTableNode(TEXT("R1"), 100.0f),};
 
+	Table[TEXT("C0")] = FNodeContainer(nullptr, FVector(1350.f, -110.f, -20.f), 90.f, false, 0u, {FMapAdjTableNode(TEXT("C1"), 1.5f), FMapAdjTableNode(TEXT("C2"), 1.5f),});
+	Table[TEXT("C1")] = FNodeContainer(nullptr, FVector(1350.f, -440.f, -20.f), 125.f, false, 0u, {FMapAdjTableNode(TEXT("C0"), 1.5f), FMapAdjTableNode(TEXT("C3"), 2.0f), FMapAdjTableNode(TEXT("L0"), 4.0f)});
+	Table[TEXT("C2")] = FNodeContainer(nullptr, FVector(1220.f, 130.f, -70.f), 30.f, false, 0u, {FMapAdjTableNode(TEXT("C0"), 1.5f), FMapAdjTableNode(TEXT("C4"), 2.0f),});
+	Table[TEXT("C3")] = FNodeContainer(nullptr, FVector(810.f, -390.f, -70.f), 60.f, false, 0u, {FMapAdjTableNode(TEXT("C1"), 2.0f), FMapAdjTableNode(TEXT("C5"), 2.5f),});
+	Table[TEXT("C4")] = FNodeContainer(nullptr, FVector(470.f, 130.f, -70.f), 67.f, false, 0u, {FMapAdjTableNode(TEXT("C2"), 1.5f), FMapAdjTableNode(TEXT("C6"), 2.5f),});
+	Table[TEXT("C5")] = FNodeContainer(nullptr, FVector(310.f, -390.f, -70.f), 0.f, true, uint8(EMonitorCode::Left), {FMapAdjTableNode(TEXT("C3"), 2.5f), FMapAdjTableNode(TEXT("C6"), 3.0f), FMapAdjTableNode(TEXT("C7"), 1.5f)});
+	Table[TEXT("C6")] = FNodeContainer(nullptr, FVector(50.f, 170.f, -70.f), 180.f, true, uint8(EMonitorCode::Right), {FMapAdjTableNode(TEXT("C4"), 2.5f), FMapAdjTableNode(TEXT("C5"), 3.0f), FMapAdjTableNode(TEXT("C7"), 1.5f)});
+	Table[TEXT("C7")] = FNodeContainer(nullptr, FVector(-190.f, -90.f, -70.f), -90.f, true, uint8(EMonitorCode::Left) | uint8(EMonitorCode::Right), {FMapAdjTableNode(TEXT("C5"), 1.5f), FMapAdjTableNode(TEXT("C6"), 1.5f),});
+	
+	Table[TEXT("L0")] = FNodeContainer(nullptr, FVector(1020.f, -870.f, -70.f), 320.f, false, 0u, {FMapAdjTableNode(TEXT("C1"), 4.0f), FMapAdjTableNode(TEXT("L1"), 2.0f), FMapAdjTableNode(TEXT("H0"), 12.0f)});
+	Table[TEXT("L1")] = FNodeContainer(nullptr, FVector(630.f, -850.f, -70.f), 17.f, true, uint8(EMonitorCode::Left), {FMapAdjTableNode(TEXT("L0"), 2.0f), FMapAdjTableNode(TEXT("L2"), 2.0f),});
+	Table[TEXT("L2")] = FNodeContainer(nullptr, FVector(230.f, -850.f, -70.f), 105.f, false, 0u, {FMapAdjTableNode(TEXT("L1"), 2.0f), FMapAdjTableNode(TEXT("H1"), 100.0f),});
+
+	Table[TEXT("R0")] = FNodeContainer(nullptr, FVector(1290.f, 600.f, -70.f), 140.f, true, uint8(EMonitorCode::Left) | uint8(EMonitorCode::Right), {FMapAdjTableNode(TEXT("R1"), 3.5f), FMapAdjTableNode(TEXT("H0"), 14.0f),});
+	Table[TEXT("R1")] = FNodeContainer(nullptr, FVector(170.f, 600.f, -70.f), 240.f, false, 0u, {FMapAdjTableNode(TEXT("R0"), 3.5f), FMapAdjTableNode(TEXT("H1"), 100.0f),});
+
+	Table[TEXT("H0")] = FNodeContainer(nullptr, FVector(-1860.f, 170.f, -200.f), 0.f, false, 0u, {FMapAdjTableNode(TEXT("L0"), 12.0f), FMapAdjTableNode(TEXT("R0"), 14.0f),});
+	Table[TEXT("H1")] = FNodeContainer(nullptr, FVector(-1860.f, 170.f, -200.f), 0.f, false, 0u, {FMapAdjTableNode(TEXT("L2"), 100.0f), FMapAdjTableNode(TEXT("R1"), 100.0f),});
+	
 	EnemyMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("EnemyMesh"));
 }
 
@@ -124,6 +125,9 @@ void AEnemy::OnMove_Implementation(const FEnemyPropertiesNode& From, const FEnem
 
 void AEnemy::OnMonitorBegin_Implementation(uint8 MonitorCode)
 {
+	LeftPretendingDurationInSingleMonitor = 0.f;
+	RightPretendingDurationInSingleMonitor = 0.f;
+	
 	if (MonitorCode & uint8(EMonitorCode::Left))
 	{
 		//UKismetSystemLibrary::PrintString(this, Protagonist->WhenLeftPretendBegin.ToString<UObject>(), true, false, FLinearColor::Green, 99.f);
@@ -143,8 +147,6 @@ void AEnemy::OnMonitorEnd_Implementation(uint8 MonitorCode)
 {
 	ResetLeftPretending();
 	ResetRightPretending();
-	LeftPretendingDurationInSingleMonitor = 0.f;
-	RightPretendingDurationInSingleMonitor = 0.f;
 	
 	if (MonitorCode | uint8(EMonitorCode::Left))
 	{
@@ -193,4 +195,14 @@ float AEnemy::GenerateMoveDelay() const
 float AEnemy::GenerateMonitorDuration() const
 {
 	return UKismetMathLibrary::RandomFloatInRange(MinMonitorDuration, MaxMonitorDuration);
+}
+
+bool AEnemy::IsMonitorQualifiedWhenMonitorEnd(uint8 MonitorCode)
+{
+	const bool bIsPretending = (MainPlayerState->GetPlayerStateCode() & (MonitorCode << 2)) == (MonitorCode << 2);
+	
+	//!A || A && B == !A || B
+	const bool bLeftMoreThanPercentage = ((MonitorCode & uint8(EMonitorCode::Left)) == 0u) || MainPlayerState->IsPlayerLeftPretending();
+	const bool bRightMoreThanPercentage = ((MonitorCode & uint8(EMonitorCode::Right)) == 0u) || MainPlayerState->IsPlayerRightPretending();
+	return bIsPretending && bLeftMoreThanPercentage && bRightMoreThanPercentage;
 }
